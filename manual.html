@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FilterPoint — Beta Tester Guide &amp; User Manual</title>
+    <style>
+        :root {
+            --bg-base: #140E0C;
+            --bg-card: #251B18;
+            --bg-input: #2E221D;
+            --surface-stroke: #3A2D28;
+            --text-primary: #F4F5FC;
+            --text-secondary: #D1D2D5;
+            --text-muted: #A89890;
+            --accent-cream: #E4D5B1;
+            --accent-warm: #E89D72;
+            --grade-safe: #81C784;
+            --grade-caution: #FFD54F;
+            --grade-avoid: #FF6B6B;
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-primary);
+            font-family: var(--font-family);
+            line-height: 1.6;
+            padding: 20px 16px 80px 16px;
+        }
+
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0 30px 0;
+            border-bottom: 1px solid var(--surface-stroke);
+            margin-bottom: 30px;
+        }
+
+        .brand-badge {
+            display: inline-block;
+            background-color: var(--bg-input);
+            color: var(--accent-cream);
+            border: 1px solid var(--surface-stroke);
+            border-radius: 20px;
+            padding: 4px 14px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .tagline {
+            font-size: 16px;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        nav.toc {
+            background-color: var(--bg-card);
+            border: 1px solid var(--surface-stroke);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 40px;
+        }
+
+        nav.toc h2 {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--accent-cream);
+            margin-bottom: 12px;
+        }
+
+        nav.toc ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 8px 16px;
+        }
+
+        nav.toc a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        nav.toc a:hover {
+            color: var(--accent-warm);
+        }
+
+        section {
+            margin-bottom: 44px;
+        }
+
+        h2 {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--accent-cream);
+            border-left: 4px solid var(--accent-warm);
+            padding-left: 12px;
+            margin-bottom: 16px;
+        }
+
+        h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 20px 0 8px 0;
+        }
+
+        p {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 14px;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--surface-stroke);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 18px;
+        }
+
+        .traffic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px;
+            margin: 16px 0;
+        }
+
+        .traffic-box {
+            padding: 14px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+        }
+
+        .box-safe {
+            background-color: #14321A;
+            border: 1px solid var(--grade-safe);
+            color: var(--grade-safe);
+        }
+
+        .box-caution {
+            background-color: #332500;
+            border: 1px solid var(--grade-caution);
+            color: var(--grade-caution);
+        }
+
+        .box-avoid {
+            background-color: #321414;
+            border: 1px solid var(--grade-avoid);
+            color: var(--grade-avoid);
+        }
+
+        .traffic-box strong {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .pill {
+            display: inline-block;
+            background-color: var(--bg-input);
+            border: 1px solid var(--surface-stroke);
+            border-radius: 6px;
+            padding: 2px 8px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        ol, ul.feature-list {
+            padding-left: 20px;
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+
+        ol li, ul.feature-list li {
+            margin-bottom: 8px;
+        }
+
+        .callout {
+            background-color: var(--bg-input);
+            border-left: 3px solid var(--accent-warm);
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin: 16px 0;
+        }
+
+        .callout strong {
+            color: var(--accent-warm);
+        }
+
+        footer {
+            margin-top: 60px;
+            padding-top: 24px;
+            border-top: 1px solid var(--surface-stroke);
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        footer a {
+            color: var(--accent-cream);
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 26px; }
+            h2 { font-size: 19px; }
+            body { padding: 16px 12px 60px 12px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <span class="brand-badge">Closed Beta Version 1.0</span>
+        <h1>FilterPoint User Manual</h1>
+        <p class="tagline">&ldquo;Filtering out the bad stuff at the point of decision.&rdquo;</p>
+    </header>
+
+    <nav class="toc">
+        <h2>Manual Directory</h2>
+        <ul>
+            <li><a href="#overview">1. Core Concept &amp; Safety Grades</a></li>
+            <li><a href="#profiles">2. Managing Profiles (Persons)</a></li>
+            <li><a href="#my-health">3. My Health &amp; Clinical Targets</a></li>
+            <li><a href="#custom-macro">4. Adjusting Macro Limits</a></li>
+            <li><a href="#scanner">5. Point-of-Decision Scanning</a></li>
+            <li><a href="#recipe-adjuster">6. The AI Recipe Adjuster</a></li>
+            <li><a href="#cookbook">7. Clinical Cookbook &amp; Cook Mode</a></li>
+            <li><a href="#feedback">8. How to Report Tester Feedback</a></li>
+        </ul>
+    </nav>
+
+    <!-- SECTION 1 -->
+    <section id="overview">
+        <h2>1. Core Concept &amp; Safety Grades</h2>
+        <p>
+            FilterPoint is a personalized health shield that evaluates food labels, fresh produce, grocery barcodes, and scraped recipes against medical conditions (such as Chronic Kidney Disease, Type 2 Diabetes, Celiac, and Autoimmune Protocol).
+        </p>
+        <p>
+            Every scanned item is evaluated on a strict 3-tier clinical rating system:
+        </p>
+
+        <div class="traffic-grid">
+            <div class="traffic-box box-safe">
+                <strong>🟢 Green — Safe</strong>
+                Complies with all clinical sodium, potassium, carbohydrate, and protein rules. Zero blacklisted triggers found.
+            </div>
+            <div class="traffic-box box-caution">
+                <strong>🟡 Yellow — Caution</strong>
+                Exceeds mild caution boundaries, triggers watchlist warnings, or contains borderline nutrient density.
+            </div>
+            <div class="traffic-box box-avoid">
+                <strong>🔴 Red — Avoid</strong>
+                Exceeds hard clinical nutrient ceilings (e.g. hazardous sodium/potassium loads) or contains blacklisted triggers (e.g. inorganic phosphates, gluten, allergens).
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2 -->
+    <section id="profiles">
+        <h2>2. Managing Profiles (Persons)</h2>
+        <p>
+            FilterPoint uses a <strong>Single Point of Responsibility</strong> architecture so you never wonder where data is created, edited, or selected:
+        </p>
+        <div class="card">
+            <ul class="feature-list">
+                <li><strong>SELECT (Home Screen):</strong> The top button <span class="pill">Profile: Me ▾</span> on the scanner screen is strictly for switching between active people. Tap any name to set who you are currently scanning for.</li>
+                <li><strong>EDIT &amp; RENAME (My Health Screen):</strong> The top field <span class="pill">Profile: [ Me ]</span> allows you to rename anyone at any time. Type a name and tap <em>Done</em> on your keyboard to save.</li>
+                <li><strong>ADD &amp; DELETE (Settings Screen):</strong> Tap the Settings gear (top-right of Home). Use <span class="pill">＋ Add New Profile</span> to add family members or clients. You are automatically redirected to <em>My Health</em> to configure their conditions.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- SECTION 3 -->
+    <section id="my-health">
+        <h2>3. My Health &amp; Clinical Targets</h2>
+        <p>
+            The <strong>My Health</strong> tab is the clinical command center for the active profile:
+        </p>
+
+        <h3>Biometric Measurements</h3>
+        <p>
+            Enter actual body weight, biological gender, and height. FilterPoint automatically calculates:
+        </p>
+        <ul class="feature-list">
+            <li><strong>Ideal Body Weight (IBW):</strong> Calculated via the clinical Devine formula based on height and biological gender.</li>
+            <li><strong>Adjusted Body Weight (AjBW):</strong> Automatically derived if actual weight exceeds 125% of IBW, ensuring dialysis and renal protein ceilings are dosed safely without over-penalizing overweight individuals.</li>
+            <li><strong>Weight Privacy:</strong> Tap <span class="pill">SHOW / HIDE</span> to mask the weight field in public.</li>
+        </ul>
+
+        <h3>Clinical Conditions &amp; Exclusivity</h3>
+        <p>
+            Check one or more conditions applicable to the active profile. FilterPoint includes built-in clinical rules:
+        </p>
+        <ul class="feature-list">
+            <li><strong>CKD Stages 1–3:</strong> 300 mg sodium ceiling, mild potassium guards, strict avoidance of inorganic phosphate additives.</li>
+            <li><strong>CKD Dialysis Support:</strong> Strict sodium (300 mg) and potassium (350 mg) caps, with mandatory high-protein floor requirements.</li>
+            <li><strong>Type 2 Diabetes:</strong> Carbohydrate and added-sugar caps with net-carb scoring.</li>
+            <li><strong>Autoimmune Protocol (AIP):</strong> Strict qualitative elimination of nightshades, grains, legumes, dairy, eggs, and seed spices without arbitrary macro penalties.</li>
+            <li><strong>Celiac &amp; Gluten Avoidance:</strong> Strict grain elimination and 1:1 gluten-free baking flour selection.</li>
+            <li><strong>Exclusivity Guards:</strong> Mutually exclusive stages (e.g. CKD 1–3 vs Dialysis) automatically toggle conflicting patterns off to prevent clinical overlap errors.</li>
+        </ul>
+    </section>
+
+    <!-- SECTION 4 -->
+    <section id="custom-macro">
+        <h2>4. Adjusting Macro Limits</h2>
+        <p>
+            Every clinical condition ships with official hospital guidelines. If your nephrologist or dietitian gave you specific custom milligram targets, you can fine-tune them directly:
+        </p>
+        <div class="card">
+            <ol>
+                <li>In <strong>My Health</strong>, scroll to the bottom of the clinical targets list.</li>
+                <li>Tap <span class="pill">Adjust Macros</span>. The sliders will automatically seed with the clinical numbers from your checked condition.</li>
+                <li>Adjust your <strong>Yellow Caution</strong> and <strong>Red Danger</strong> limits for Sodium, Potassium, Saturated Fat, Carbohydrates, and Protein.</li>
+                <li><strong>Interactive Safety Clamping:</strong> Yellow limits are mechanically prevented from exceeding Red danger limits.</li>
+                <li>Tap <strong>Save</strong>. Custom limits now apply exclusively to this profile.</li>
+                <li><strong>Resetting to Hospital Defaults:</strong> When custom numbers are active, a <span class="pill">Reset to Defaults</span> button appears. Tapping it wipes custom tweaks and restores standard guidelines.</li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- SECTION 5 -->
+    <section id="scanner">
+        <h2>5. Point-of-Decision Scanning</h2>
+        <p>
+            FilterPoint provides three distinct input modes on the Home screen thumb menu:
+        </p>
+
+        <div class="card">
+            <h3>📷 Label Scan (Camera)</h3>
+            <p>
+                Point your camera at a printed food label and capture. FilterPoint executes local, on-device OCR (Optical Character Recognition) to extract the Nutrition Facts box and ingredients panel with zero cloud latency.
+            </p>
+
+            <h3>⚡ Barcode Scan</h3>
+            <p>
+                Point your viewfinder at any 12-digit UPC or 13-digit EAN grocery barcode. The scanner features a <strong>1D retail hardware lock</strong> that blinds the sensor to marketing QR codes and settles autofocus after 600ms.
+            </p>
+            <div class="callout">
+                <strong>Safer Alternatives Engine:</strong> If a scanned barcode triggers Red (Avoid) or Yellow (Caution), FilterPoint automatically searches the US market database for safer Green/Yellow alternatives in the exact same product category.
+            </div>
+
+            <h3>🍎 Produce Scan</h3>
+            <p>
+                Photograph unpackaged fresh produce (apples, squash, peppers, greens). FilterPoint runs a produce reality check to guard against non-food items and resolves exact raw USDA macro metrics per 100 grams.
+            </p>
+        </div>
+    </section>
+
+    <!-- SECTION 6 -->
+    <section id="recipe-adjuster">
+        <h2>6. The AI Recipe Adjuster</h2>
+        <p>
+            The <strong>Recipe</strong> tab turns unsafe culinary recipes into safe meals tailored to your active health profile:
+        </p>
+        <div class="card">
+            <ol>
+                <li><strong>Importing a Recipe:</strong> Tap <span class="pill">📂 Import</span> to paste text, read from clipboard, import a <code>.txt</code> file, or paste a recipe website URL (e.g., Allrecipes, Food Network).</li>
+                <li><strong>Servings:</strong> Verify or adjust the serving counter (defaults to 4).</li>
+                <li><strong>Profile &amp; Adjust:</strong> Tap the primary action button. FilterPoint checks its local 0-second cache; if unanalyzed, it calls the cloud generative AI pipeline.</li>
+                <li><strong>Differential Clinical HUD:</strong> View horizontal differential gauges comparing original vs. adjusted Sodium, Potassium, Net Carbs, and Protein.</li>
+                <li><strong>Step-by-Step Instructions:</strong> Tap <span class="pill">Get Steps</span> to synthesize complete cooking steps adapted to the new substituted ingredients.</li>
+                <li><strong>Save to Cookbook:</strong> Tap <span class="pill">Save</span> to store the adjusted recipe in your offline Clinical Cookbook.</li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- SECTION 7 -->
+    <section id="cookbook">
+        <h2>7. Clinical Cookbook &amp; Cook Mode</h2>
+        <p>
+            The <strong>Saved</strong> tab holds your personal library of compliant meals:
+        </p>
+
+        <div class="card">
+            <h3>Dynamic Real-Time Safety Badges</h3>
+            <p>
+                Every saved recipe dynamically re-evaluates its safety badge against the <em>currently active profile</em> in real time:
+            </p>
+            <ul class="feature-list">
+                <li><strong style="color:var(--grade-safe);">🟢 Verified Safe:</strong> The recipe was adjusted for this active condition and contains zero violations.</li>
+                <li><strong style="color:var(--grade-caution);">🟡 Re-Verify:</strong> The recipe was saved under a different health profile (e.g. saved for Celiac, but active member has CKD). Tap the recipe and hit <span class="pill">↻ Re-Profile</span> to adjust it.</li>
+                <li><strong style="color:var(--grade-avoid);">🔴 Avoid:</strong> The recipe contains an ingredient currently on the active profile's custom Avoid watchlist.</li>
+            </ul>
+
+            <h3>🍳 Hands-Free Cook Mode</h3>
+            <p>
+                Open any saved recipe in the Cookbook Reader. In the <em>Step-by-Step Preparation</em> header, tap:
+            </p>
+            <p style="text-align: center; margin: 16px 0;">
+                <span class="pill" style="color:var(--accent-warm); border-color:var(--accent-warm);">🍳 Cook Mode: ON</span>
+            </p>
+            <p>
+                Cook Mode keeps your phone screen awake indefinitely so you can follow instructions with wet, oily, or floured hands without touching the glass.
+            </p>
+            <div class="callout">
+                <strong>Battery &amp; Pocket Fail-Safe:</strong> If you exit the screen, switch apps, or press your phone's power button, Cook Mode automatically resets to <strong>OFF</strong>. It will never drain your battery in a pocket or purse.
+            </div>
+
+            <h3>Swipe to Delete</h3>
+            <p>
+                Swipe left on any recipe entry in the cookbook list to remove it permanently.
+            </p>
+        </div>
+    </section>
+
+    <!-- SECTION 8 -->
+    <section id="feedback">
+        <h2>8. How to Report Tester Feedback</h2>
+        <p>
+            As a closed beta tester, your feedback directly shapes the public release. Here is how and what to report:
+        </p>
+
+        <div class="card">
+            <h3>One-Tap Recipe Telemetry</h3>
+            <p>
+                Inside the Recipe Adjuster, tap <span class="pill">Report Issue</span>. FilterPoint automatically compiles your active condition settings, original ingredients, adjusted substitutions, and numerical deltas into a pre-filled email addressed directly to <strong>support@filterpoint.app</strong>. Add your notes and send.
+            </p>
+
+            <h3>What We Need You to Test</h3>
+            <ul class="feature-list">
+                <li><strong>OCR Quirks:</strong> Did a curved can or reflective glossy bag misread an ingredient line?</li>
+                <li><strong>Barcode Accuracy:</strong> Did a scanned grocery item return an inaccurate macro count or foreign alternative?</li>
+                <li><strong>Culinary Rationale:</strong> Did an AI substitution make sense in the kitchen (e.g., swapping baking powder for baking soda + lemon juice in CKD)?</li>
+                <li><strong>UI &amp; Navigation:</strong> Did any button wrap text awkwardly or fail to respond on your specific phone model?</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>FilterPoint Software</strong> &mdash; <em>&ldquo;Filtering out the bad stuff at the point of decision.&rdquo;</em></p>
+        <p style="margin-top: 8px;">Direct Developer Support: <a href="mailto:support@filterpoint.app">support@filterpoint.app</a></p>
+        <p style="margin-top: 12px; font-size: 11px;">Clinical &amp; Medical Disclaimer: FilterPoint provides nutritional data and ingredient analysis for informational, culinary, and dietary guidance only. It is not medical software or clinical diagnosis. Always consult your nephrologist or registered dietitian before making significant dietary changes.</p>
+        <p style="margin-top: 12px;">&copy; 2026 FilterPoint Software. All rights reserved.</p>
+    </footer>
+
+</div>
+
+</body>
+</html>
