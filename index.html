@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FilterPoint - Clinical Nutrition Shield & Recipe Adjuster</title>
+    <style>
+        :root {
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --primary: #1B5E20;
+            --primary-dark: #0E3B2E;
+            --accent: #80E8A8;
+            --brand-blue: #1d4ed8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: var(--primary-dark);
+            color: white;
+            text-align: center;
+            padding: 60px 20px 45px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(128, 232, 168, 0.15);
+            color: var(--accent);
+            font-size: 13px;
+            font-weight: 600;
+            padding: 5px 14px;
+            border-radius: 9999px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 14px;
+            border: 1px solid rgba(128, 232, 168, 0.3);
+        }
+
+        header h1 {
+            font-size: 38px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 20px;
+            color: var(--accent);
+            max-width: 650px;
+            margin: 0 auto;
+            font-weight: 500;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: -25px auto 40px;
+            padding: 0 16px;
+        }
+
+        .card {
+            background: var(--surface);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            padding: 40px 32px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 24px;
+        }
+
+        h2 {
+            font-size: 22px;
+            color: var(--text-main);
+            margin-bottom: 12px;
+        }
+
+        p.lead {
+            color: var(--text-muted);
+            font-size: 16px;
+            margin-bottom: 28px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .feature-box {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .feature-box h3 {
+            font-size: 16px;
+            color: var(--primary);
+            margin-bottom: 6px;
+        }
+
+        .feature-box p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .cta-section {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .cta-section h3 {
+            color: var(--primary-dark);
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .cta-section p {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .btn-join {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            font-size: 17px;
+            font-weight: 700;
+            text-decoration: none;
+            padding: 16px 36px;
+            border-radius: 8px;
+            transition: background-color 0.2s;
+        }
+
+        .btn-join:hover {
+            background-color: var(--primary-dark);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 16px 50px;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        footer a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="badge">Clinical Nutrition Shield</div>
+    <h1>FilterPoint</h1>
+    <p>Filtering out the bad stuff at the point of decision.</p>
+</header>
+
+<div class="container">
+    <div class="card">
+        <h2>Clinical Food Scanning & Intelligent Recipe Adjustment</h2>
+        <p class="lead">Managing dietary restrictions for Chronic Kidney Disease (CKD), Type 2 Diabetes, GLP-1 therapy, or food intolerances shouldn't feel like a guessing game. FilterPoint evaluates food labels, barcodes, and fresh produce against your exact clinical profile—alerting you to hidden sodium, potassium, phosphorus, and excess sugars before you buy or eat.</p>
+
+        <div class="features-grid">
+            <div class="feature-box">
+                <h3>Multi-Modal Scanning</h3>
+                <p>Point your camera at food labels via OCR, scan product barcodes, or analyze fresh produce using AI vision.</p>
+            </div>
+            <div class="feature-box">
+                <h3>Clinical Profiles</h3>
+                <p>Calibrated specifically for CKD Stages 1-5, Dialysis, Type 2 Diabetes, GLP-1, Celiac, and custom watchlists.</p>
+            </div>
+            <div class="feature-box">
+                <h3>Recipe Adjuster</h3>
+                <p>Don't give up family favorites. FilterPoint replaces unsafe ingredients with chemically sound, clinically safe swaps.</p>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h3>Join the Confidential Android Beta</h3>
+            <p>We are currently accepting a limited group of testers to evaluate pre-release software.</p>
+            <a href="join.html" class="btn-join">Join Beta (Review & Sign Agreement) &rarr;</a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 FilterPoint Software. All rights reserved.</p>
+    <p style="margin-top: 6px;">
+        <a href="privacy.html">Privacy Policy</a> &bull; 
+        <a href="mailto:support@filterpoint.app">support@filterpoint.app</a>
+    </p>
+</footer>
+
+</body>
+</html>
