@@ -154,6 +154,23 @@
             background-color: var(--primary-dark);
         }
 
+        .manual-link-wrapper {
+            margin-top: 18px;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .manual-link-wrapper a {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: underline;
+            margin-left: 4px;
+        }
+
+        .manual-link-wrapper a:hover {
+            color: var(--primary-dark);
+        }
+
         footer {
             text-align: center;
             padding: 20px 16px 50px;
@@ -204,6 +221,11 @@
             <h3>Join the Confidential Android Beta</h3>
             <p>We are currently accepting a limited group of testers to evaluate pre-release software.</p>
             <a href="join.html" class="btn-join">Join Beta (Review & Sign Agreement) &rarr;</a>
+
+            <div class="manual-link-wrapper">
+                <span>Already a tester?</span>
+                <a href="manual.html">📖 View & Bookmark the User Manual &rarr;</a>
+            </div>
         </div>
     </div>
 </div>
@@ -211,6 +233,7 @@
 <footer>
     <p>&copy; 2026 FilterPoint Software. All rights reserved.</p>
     <p style="margin-top: 6px;">
+        <a href="manual.html">User Manual</a> &bull; 
         <a href="privacy.html">Privacy Policy</a> &bull; 
         <a href="mailto:support@filterpoint.app">support@filterpoint.app</a>
     </p>
