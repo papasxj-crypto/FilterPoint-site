@@ -4,20 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FilterPoint — Beta Tester Guide &amp; User Manual</title>
+    <link rel="icon" type="image/png" href="icon.png">
     <style>
         :root {
-            --bg-base: #140E0C;
-            --bg-card: #251B18;
-            --bg-input: #2E221D;
-            --surface-stroke: #3A2D28;
-            --text-primary: #F4F5FC;
-            --text-secondary: #D1D2D5;
-            --text-muted: #A89890;
-            --accent-cream: #E4D5B1;
-            --accent-warm: #E89D72;
-            --grade-safe: #81C784;
-            --grade-caution: #FFD54F;
-            --grade-avoid: #FF6B6B;
+            --primary: #2B1F16;
+            --primary-variant: #1F1714;
+            --on-primary: #F4F5FC;
+            --secondary: #82B1FF;
+            --secondary-variant: #E89D72;
+            --bg-cream: #F8F5F0;
+            --card-bg: #FFFFFF;
+            --text-main: #2B1F16;
+            --text-body: #42352F;
+            --text-muted: #6B5B52;
+            --border-color: #E6DFD5;
+
+            /* Traffic Alert System */
+            --box-safe-bg: #EAF7ED;
+            --box-safe-border: #81C784;
+            --box-safe-text: #1B5E20;
+
+            --box-caution-bg: #FFF9E6;
+            --box-caution-border: #FFD54F;
+            --box-caution-text: #8D6E00;
+
+            --box-avoid-bg: #FDF0F0;
+            --box-avoid-border: #FF8A8A;
+            --box-avoid-text: #B71C1C;
+
             --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
@@ -28,30 +42,70 @@
         }
 
         body {
-            background-color: var(--bg-base);
-            color: var(--text-primary);
+            background-color: var(--bg-cream);
+            color: var(--text-body);
             font-family: var(--font-family);
             line-height: 1.6;
-            padding: 20px 16px 80px 16px;
         }
 
+        /* Standard Header */
+        header.site-header {
+            background-color: var(--primary);
+            color: var(--on-primary);
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid var(--secondary-variant);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--on-primary);
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .brand img {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+        }
+
+        nav.header-nav a {
+            color: var(--on-primary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            margin-left: 1.5rem;
+            transition: color 0.2s ease;
+        }
+
+        nav.header-nav a:hover {
+            color: var(--secondary-variant);
+        }
+
+        /* Container & Page Header */
         .container {
             max-width: 860px;
             margin: 0 auto;
+            padding: 40px 16px 80px 16px;
         }
 
-        header {
+        .manual-hero {
             text-align: center;
-            padding: 40px 0 30px 0;
-            border-bottom: 1px solid var(--surface-stroke);
+            padding: 20px 0 30px 0;
+            border-bottom: 1px solid var(--border-color);
             margin-bottom: 30px;
         }
 
         .brand-badge {
             display: inline-block;
-            background-color: var(--bg-input);
-            color: var(--accent-cream);
-            border: 1px solid var(--surface-stroke);
+            background-color: rgba(232, 157, 114, 0.15);
+            color: var(--secondary-variant);
+            border: 1px solid var(--secondary-variant);
             border-radius: 20px;
             padding: 4px 14px;
             font-size: 11px;
@@ -64,7 +118,7 @@
         h1 {
             font-size: 32px;
             font-weight: 800;
-            color: var(--text-primary);
+            color: var(--primary);
             margin-bottom: 8px;
         }
 
@@ -74,37 +128,43 @@
             font-style: italic;
         }
 
+        /* Table of Contents */
         nav.toc {
-            background-color: var(--bg-card);
-            border: 1px solid var(--surface-stroke);
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
             border-radius: 12px;
-            padding: 20px 24px;
+            padding: 22px 26px;
             margin-bottom: 40px;
+            box-shadow: 0 4px 12px rgba(43, 31, 22, 0.04);
         }
 
         nav.toc h2 {
             font-size: 13px;
             text-transform: uppercase;
             letter-spacing: 0.08em;
-            color: var(--accent-cream);
-            margin-bottom: 12px;
+            color: var(--secondary-variant);
+            margin-bottom: 14px;
+            border: none;
+            padding-left: 0;
         }
 
         nav.toc ul {
             list-style: none;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 8px 16px;
+            gap: 10px 18px;
         }
 
         nav.toc a {
-            color: var(--text-secondary);
+            color: var(--primary);
             text-decoration: none;
             font-size: 14px;
+            font-weight: 600;
         }
 
         nav.toc a:hover {
-            color: var(--accent-warm);
+            color: var(--secondary-variant);
+            text-decoration: underline;
         }
 
         section {
@@ -114,8 +174,8 @@
         h2 {
             font-size: 22px;
             font-weight: 700;
-            color: var(--accent-cream);
-            border-left: 4px solid var(--accent-warm);
+            color: var(--primary);
+            border-left: 4px solid var(--secondary-variant);
             padding-left: 12px;
             margin-bottom: 16px;
         }
@@ -123,24 +183,26 @@
         h3 {
             font-size: 16px;
             font-weight: 700;
-            color: var(--text-primary);
+            color: var(--primary);
             margin: 20px 0 8px 0;
         }
 
         p {
             font-size: 15px;
-            color: var(--text-secondary);
+            color: var(--text-body);
             margin-bottom: 14px;
         }
 
         .card {
-            background-color: var(--bg-card);
-            border: 1px solid var(--surface-stroke);
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
             border-radius: 12px;
-            padding: 20px;
+            padding: 22px;
             margin-bottom: 18px;
+            box-shadow: 0 4px 12px rgba(43, 31, 22, 0.04);
         }
 
+        /* Traffic Alert System */
         .traffic-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -152,24 +214,25 @@
             padding: 14px 16px;
             border-radius: 8px;
             font-size: 13px;
+            line-height: 1.5;
         }
 
         .box-safe {
-            background-color: #14321A;
-            border: 1px solid var(--grade-safe);
-            color: var(--grade-safe);
+            background-color: var(--box-safe-bg);
+            border: 1px solid var(--box-safe-border);
+            color: var(--box-safe-text);
         }
 
         .box-caution {
-            background-color: #332500;
-            border: 1px solid var(--grade-caution);
-            color: var(--grade-caution);
+            background-color: var(--box-caution-bg);
+            border: 1px solid var(--box-caution-border);
+            color: var(--box-caution-text);
         }
 
         .box-avoid {
-            background-color: #321414;
-            border: 1px solid var(--grade-avoid);
-            color: var(--grade-avoid);
+            background-color: var(--box-avoid-bg);
+            border: 1px solid var(--box-avoid-border);
+            color: var(--box-avoid-text);
         }
 
         .traffic-box strong {
@@ -180,18 +243,18 @@
 
         .pill {
             display: inline-block;
-            background-color: var(--bg-input);
-            border: 1px solid var(--surface-stroke);
+            background-color: #ECE7DF;
+            border: 1px solid #D8D1C5;
             border-radius: 6px;
             padding: 2px 8px;
             font-size: 12px;
             font-weight: 600;
-            color: var(--text-primary);
+            color: var(--primary);
         }
 
         ol, ul.feature-list {
             padding-left: 20px;
-            color: var(--text-secondary);
+            color: var(--text-body);
             font-size: 14px;
             margin-bottom: 16px;
         }
@@ -201,49 +264,64 @@
         }
 
         .callout {
-            background-color: var(--bg-input);
-            border-left: 3px solid var(--accent-warm);
+            background-color: rgba(232, 157, 114, 0.12);
+            border-left: 4px solid var(--secondary-variant);
             padding: 12px 16px;
             border-radius: 0 8px 8px 0;
             font-size: 13px;
-            color: var(--text-secondary);
+            color: var(--text-body);
             margin: 16px 0;
         }
 
         .callout strong {
-            color: var(--accent-warm);
+            color: var(--primary);
         }
 
         footer {
-            margin-top: 60px;
-            padding-top: 24px;
-            border-top: 1px solid var(--surface-stroke);
+            background-color: var(--primary-variant);
+            color: #9C8E85;
+            padding: 2.5rem 1.5rem;
             text-align: center;
-            font-size: 12px;
-            color: var(--text-muted);
+            border-top: 1px solid #382A24;
+            font-size: 0.9rem;
         }
 
         footer a {
-            color: var(--accent-cream);
+            color: var(--secondary-variant);
             text-decoration: none;
+            margin: 0 0.75rem;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
 
         @media (max-width: 600px) {
             h1 { font-size: 26px; }
             h2 { font-size: 19px; }
-            body { padding: 16px 12px 60px 12px; }
+            .container { padding: 20px 12px 60px 12px; }
         }
     </style>
 </head>
 <body>
 
+<header class="site-header">
+    <a href="/" class="brand">
+        <img src="icon.png" alt="FilterPoint Logo" onerror="this.style.display='none'">
+        <span>FilterPoint</span>
+    </a>
+    <nav class="header-nav">
+        <a href="/">Home</a>
+    </nav>
+</header>
+
 <div class="container">
 
-    <header>
+    <div class="manual-hero">
         <span class="brand-badge">Closed Beta Version 1.0</span>
         <h1>FilterPoint User Manual</h1>
         <p class="tagline">&ldquo;Filtering out the bad stuff at the point of decision.&rdquo;</p>
-    </header>
+    </div>
 
     <nav class="toc">
         <h2>Manual Directory</h2>
@@ -408,9 +486,9 @@
                 Every saved recipe dynamically re-evaluates its safety badge against the <em>currently active profile</em> in real time:
             </p>
             <ul class="feature-list">
-                <li><strong style="color:var(--grade-safe);">🟢 Verified Safe:</strong> The recipe was adjusted for this active condition and contains zero violations.</li>
-                <li><strong style="color:var(--grade-caution);">🟡 Re-Verify:</strong> The recipe was saved under a different health profile (e.g. saved for Celiac, but active member has CKD). Tap the recipe and hit <span class="pill">↻ Re-Profile</span> to adjust it.</li>
-                <li><strong style="color:var(--grade-avoid);">🔴 Avoid:</strong> The recipe contains an ingredient currently on the active profile's custom Avoid watchlist.</li>
+                <li><strong style="color:var(--box-safe-text);">🟢 Verified Safe:</strong> The recipe was adjusted for this active condition and contains zero violations.</li>
+                <li><strong style="color:var(--box-caution-text);">🟡 Re-Verify:</strong> The recipe was saved under a different health profile (e.g. saved for Celiac, but active member has CKD). Tap the recipe and hit <span class="pill">↻ Re-Profile</span> to adjust it.</li>
+                <li><strong style="color:var(--box-avoid-text);">🔴 Avoid:</strong> The recipe contains an ingredient currently on the active profile's custom Avoid watchlist.</li>
             </ul>
 
             <h3>🍳 Hands-Free Cook Mode</h3>
@@ -418,7 +496,7 @@
                 Open any saved recipe in the Cookbook Reader. In the <em>Step-by-Step Preparation</em> header, tap:
             </p>
             <p style="text-align: center; margin: 16px 0;">
-                <span class="pill" style="color:var(--accent-warm); border-color:var(--accent-warm);">🍳 Cook Mode: ON</span>
+                <span class="pill" style="color:var(--secondary-variant); border-color:var(--secondary-variant); padding: 6px 12px; font-size: 13px;">🍳 Cook Mode: ON</span>
             </p>
             <p>
                 Cook Mode keeps your phone screen awake indefinitely so you can follow instructions with wet, oily, or floured hands without touching the glass.
@@ -457,14 +535,20 @@
         </div>
     </section>
 
-    <footer>
-        <p><strong>FilterPoint Software</strong> &mdash; <em>&ldquo;Filtering out the bad stuff at the point of decision.&rdquo;</em></p>
-        <p style="margin-top: 8px;">Direct Developer Support: <a href="mailto:support@filterpoint.app">support@filterpoint.app</a></p>
-        <p style="margin-top: 12px; font-size: 11px;">Clinical &amp; Medical Disclaimer: FilterPoint provides nutritional data and ingredient analysis for informational, culinary, and dietary guidance only. It is not medical software or clinical diagnosis. Always consult your nephrologist or registered dietitian before making significant dietary changes.</p>
-        <p style="margin-top: 12px;">&copy; 2026 FilterPoint Software. All rights reserved.</p>
-    </footer>
-
 </div>
+
+<footer>
+    <p>
+        <a href="/">Home</a> | 
+        <a href="manual.html">User Manual</a> | 
+        <a href="privacy.html">Privacy Policy</a> | 
+        <a href="terms.html">Terms of Service</a>
+    </p>
+    <p style="margin-top: 10px;"><strong>FilterPoint Software</strong> &mdash; <em>&ldquo;Filtering out the bad stuff at the point of decision.&rdquo;</em></p>
+    <p style="margin-top: 6px;">Direct Developer Support: <a href="mailto:support@filterpoint.app">support@filterpoint.app</a></p>
+    <p style="margin-top: 10px; font-size: 11px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.5;">Clinical Disclaimer: FilterPoint provides nutritional data and ingredient analysis for informational, culinary, and dietary guidance only. It is not medical software or clinical diagnosis. Always consult your nephrologist or registered dietitian before making significant dietary changes.</p>
+    <p style="margin-top: 10px;">&copy; 2026 FilterPoint Software. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
