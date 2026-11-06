@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Questions (FAQ) | FilterPoint</title>
+    <meta name="description" content="Frequently asked questions about FilterPoint clinical nutrition scanner, supported conditions, scanning accuracy, and local privacy.">
+    <link rel="icon" type="image/png" href="icon.png">
+    <style>
+        :root {
+            --primary: #2B1F16;
+            --primary-variant: #1F1714;
+            --on-primary: #F4F5FC;
+            --secondary: #82B1FF;
+            --secondary-variant: #E89D72;
+            --bg-cream: #F8F5F0;
+            --card-bg: #FFFFFF;
+            --text-main: #2B1F16;
+            --text-body: #42352F;
+            --text-muted: #6B5B52;
+            --border-color: #E6DFD5;
+            --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-cream);
+            color: var(--text-body);
+            font-family: var(--font-family);
+            line-height: 1.6;
+        }
+
+        /* Standard Header */
+        header.site-header {
+            background-color: var(--primary);
+            color: var(--on-primary);
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid var(--secondary-variant);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--on-primary);
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .brand img {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+        }
+
+        nav.header-nav a {
+            color: var(--on-primary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            margin-left: 1.5rem;
+            transition: color 0.2s ease;
+        }
+
+        nav.header-nav a:hover {
+            color: var(--secondary-variant);
+        }
+
+        /* Container & Page Header */
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 40px 16px 80px 16px;
+        }
+
+        .faq-hero {
+            text-align: center;
+            padding: 20px 0 30px 0;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 30px;
+        }
+
+        .brand-badge {
+            display: inline-block;
+            background-color: rgba(232, 157, 114, 0.15);
+            color: var(--secondary-variant);
+            border: 1px solid var(--secondary-variant);
+            border-radius: 20px;
+            padding: 4px 14px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .tagline {
+            font-size: 16px;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        /* Content Sections */
+        section {
+            margin-bottom: 36px;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary);
+            border-left: 4px solid var(--secondary-variant);
+            padding-left: 12px;
+            margin-bottom: 16px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 12px rgba(43, 31, 22, 0.04);
+        }
+
+        .qa-item {
+            margin-bottom: 20px;
+        }
+
+        .qa-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .question {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 6px;
+            display: flex;
+            align-items: baseline;
+            gap: 6px;
+        }
+
+        .question .q-prefix {
+            color: var(--secondary-variant);
+            font-weight: 800;
+        }
+
+        .answer {
+            font-size: 15px;
+            color: var(--text-body);
+            line-height: 1.6;
+            padding-left: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-variant);
+            color: #9C8E85;
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            border-top: 1px solid #382A24;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--secondary-variant);
+            text-decoration: none;
+            margin: 0 0.75rem;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 26px; }
+            h2 { font-size: 18px; }
+            .container { padding: 20px 12px 60px 12px; }
+            .card { padding: 18px; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <a href="/" class="brand">
+        <img src="icon.png" alt="FilterPoint Logo" onerror="this.style.display='none'">
+        <span>FilterPoint</span>
+    </a>
+    <nav class="header-nav">
+        <a href="/">Home</a>
+        <a href="manual.html">User Manual</a>
+    </nav>
+</header>
+
+<div class="container">
+
+    <div class="faq-hero">
+        <span class="brand-badge">Support &amp; Clinical Knowledge</span>
+        <h1>Frequently Asked Questions</h1>
+        <p class="tagline">&ldquo;Filtering out the bad stuff at the point of decision.&rdquo;</p>
+    </div>
+
+    <!-- Category 1 -->
+    <section>
+        <h2>Medical Disclaimer &amp; Clinical Accuracy</h2>
+        <div class="card">
+            <div class="qa-item">
+                <div class="question"><span class="q-prefix">Q:</span> Is FilterPoint a substitute for a doctor or registered dietitian?</div>
+                <div class="answer"><strong>No.</strong> FilterPoint is a clinical nutrition shield and educational tool designed to assist with dietary tracking and recipe adjustments. Always consult your healthcare provider or renal dietitian regarding your specific medical nutritional needs.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category 2 -->
+    <section>
+        <h2>Supported Conditions &amp; Diets</h2>
+        <div class="card">
+            <div class="qa-item">
+                <div class="question"><span class="q-prefix">Q:</span> Which health conditions does FilterPoint evaluate?</div>
+                <div class="answer">FilterPoint currently supports CKD Stages 1–3, CKD Stages 4–5, Dialysis, Type 2 Diabetes, GLP-1 support, Celiac disease, Autoimmune Protocol (AIP), and custom user watchlists.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category 3 -->
+    <section>
+        <h2>Scanning &amp; Accuracy</h2>
+        <div class="card">
+            <div class="qa-item">
+                <div class="question"><span class="q-prefix">Q:</span> Why did my label scan say &ldquo;Incomplete Scan&rdquo; or &ldquo;Non-food item detected&rdquo;?</div>
+                <div class="answer">Ensure you are photographing a clear Nutrition Facts panel or raw produce item in good lighting. If the image is blurry, angled too sharply, or contains non-food objects, our built-in safety guardrails will reject it to prevent inaccurate clinical reads.</div>
+            </div>
+            <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 18px 0;">
+            <div class="qa-item">
+                <div class="question"><span class="q-prefix">Q:</span> Where do barcode details come from?</div>
+                <div class="answer">Barcodes are cross-referenced directly with Open Food Facts and global USDA databases through secure, anonymous lookups.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category 4 -->
+    <section>
+        <h2>Privacy &amp; Data Storage</h2>
+        <div class="card">
+            <div class="qa-item">
+                <div class="question"><span class="q-prefix">Q:</span> Where is my health profile and custom watchlist stored?</div>
+                <div class="answer">Your profile settings, slider overrides, and custom watchlists are stored locally on your device in secure app-scoped XML and SharedPreferences files. Your health data stays private and is never uploaded, tracked, or sold.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category 5 -->
+    <section>
+        <h2>Subscriptions &amp; Pro Features</h2>
+        <div class="card">
+            <div class="qa-item">
+                <div class="question"><span class="q-prefix">Q:</span> What features require a Pro subscription?</div>
+                <div class="answer">Pro access unlocks advanced AI recipe adjusting, chemically sound clinical ingredient substitutions, and extended scan history. Subscriptions are managed directly and securely through Google Play Billing.</div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    <p>
+        <a href="/">Home</a> | 
+        <a href="manual.html">User Manual</a> | 
+        <a href="faq.html">FAQ</a> | 
+        <a href="privacy.html">Privacy Policy</a> | 
+        <a href="terms.html">Terms of Service</a>
+    </p>
+    <p style="margin-top: 10px;"><strong>FilterPoint Software</strong> &mdash; <em>&ldquo;Filtering out the bad stuff at the point of decision.&rdquo;</em></p>
+    <p style="margin-top: 6px;">Direct Developer Support: <a href="mailto:support@filterpoint.app">support@filterpoint.app</a></p>
+    <p style="margin-top: 10px; font-size: 11px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.5;">Clinical Disclaimer: FilterPoint provides nutritional data and ingredient analysis for informational, culinary, and dietary guidance only. It is not medical software or clinical diagnosis. Always consult your nephrologist or registered dietitian before making significant dietary changes.</p>
+    <p style="margin-top: 10px;">&copy; 2026 FilterPoint Software. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
