@@ -168,6 +168,16 @@
             padding-left: 20px;
         }
 
+        .feature-bullets {
+            margin: 8px 0 8px 20px;
+            color: var(--text-body);
+            font-size: 14px;
+        }
+
+        .feature-bullets li {
+            margin-bottom: 4px;
+        }
+
         /* Footer */
         footer {
             background-color: var(--primary-variant);
@@ -255,12 +265,12 @@
             <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 18px 0;">
             <div class="qa-item">
                 <div class="question"><span class="q-prefix">Q:</span> What if a scanned barcode doesn&apos;t match the product or isn&apos;t found?</div>
-                <div class="answer">Open Food Facts is a crowd-sourced database. If a barcode isn&apos;t found or shows incorrect data, FilterPoint automatically prompts you to snap a photo of the product&apos;s nutrition label and ingredients list for instant AI evaluation.</div>
+                <div class="answer">Open Food Facts is a crowd-sourced database. If a barcode isn&apos;t found or shows incorrect data, FilterPoint automatically prompts you to snap a photo of the product&apos;s nutrition label and ingredients list for instant on-device OCR evaluation.</div>
             </div>
             <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 18px 0;">
             <div class="qa-item">
                 <div class="question"><span class="q-prefix">Q:</span> What is the &ldquo;Report&rdquo; button for on recipe results?</div>
-                <div class="answer">If you encounter an unusual ingredient substitution or formatting error on a recipe, tapping &ldquo;Report&rdquo; sends feedback directly to our team to help refine our clinical AI engine.</div>
+                <div class="answer">If you encounter an unusual ingredient substitution or formatting error on a recipe, tapping &ldquo;Report&rdquo; sends telemetry feedback directly to our team to help refine our clinical AI engine.</div>
             </div>
         </div>
     </section>
@@ -276,16 +286,40 @@
         </div>
     </section>
 
-<!-- Category 5 -->
+    <!-- Category 5 -->
     <section>
-        <h2>Subscriptions &amp; Premium Features</h2>
+        <h2>Free Tier vs. Premium Subscription</h2>
         <div class="card">
             <div class="qa-item">
-                <div class="question"><span class="q-prefix">Q:</span> What features require a Premium subscription?</div>
-                <div class="answer">Premium access unlocks advanced AI recipe adjusting, chemically sound clinical ingredient substitutions, extended scan history, the ability to manage multiple health profiles, and custom macro slider adjustments. Core label scanning and custom watchlists remain fully free for all users. Subscriptions are managed securely through Google Play Billing.</div>
+                <div class="question"><span class="q-prefix">Q:</span> What is available for free?</div>
+                <div class="answer">
+                    The core grocery scanning features are <strong>100% free forever</strong>:
+                    <ul class="feature-bullets">
+                        <li>All three scan tools: On-device Label OCR, Barcode scanner, and Gemini AI fresh produce scanner.</li>
+                        <li>Unlimited additions to your custom Red Avoid and Yellow Caution watchlists.</li>
+                        <li>Full access to all preset clinical condition files (select one or combine multiple for your specific needs).</li>
+                        <li>One dedicated personal profile with ideal/adjusted body weight calculations.</li>
+                    </ul>
+                </div>
+            </div>
+            <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 18px 0;">
+            <div class="qa-item">
+                <div class="question"><span class="q-prefix">Q:</span> What features are included with a Premium subscription?</div>
+                <div class="answer">
+                    A Premium subscription unlocks advanced culinary tools and multi-profile caretaker management:
+                    <ul class="feature-bullets">
+                        <li><strong>Unlimited User Profiles:</strong> Scan and track safety for multiple family members, clients, or patients.</li>
+                        <li><strong>Custom Value Sliders:</strong> Override standard hospital guidelines with your dietitian's exact milligram targets.</li>
+                        <li><strong>AI Recipe Adjuster:</strong> Automatically rebalance recipes with chemically sound, clinically safe ingredient substitutions.</li>
+                        <li><strong>Clinical Cookbook &amp; Cook Mode:</strong> Save compliant recipes to your personal cookbook with hands-free Cook Mode to keep your phone screen awake while prepping.</li>
+                    </ul>
+                    Subscriptions are billed and managed securely through Google Play Billing.
+                </div>
             </div>
         </div>
-    </section></div>
+    </section>
+
+</div>
 
 <footer>
     <p>
